@@ -1,1 +1,48 @@
-<h1>working</h1>
+<nav>
+  <div class="nav-bar">
+    <h3 class="nav-title">家庭記帳本</h3>
+    <button class="logout-btn">登出</button>
+  </div>
+</nav>
+
+<div class="category">
+  <form action="/">
+    <select class="category-dropdown" name="sort" id="sort">
+      <option value="default">類別</option>
+    </select>
+  </form>
+</div>
+
+<div class="total-group">
+  <div class="total-text">總金額：</div>
+  <div class="totalAmount">50000</div>
+</div>
+
+<div class="container">
+  <div class="expense-list">
+    <ul>
+      <li>
+        <div class="item-group">
+          <div class="item-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div class="item-text">
+            <h3 class="item-name">午餐</h3>
+            <h6 class="item-date">2022/10/29</h6>
+          </div>
+        </div>
+        <div class="item-price">
+          <p>60</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="edit-del">
+    <a href="" class="edit">修改</a>
+    <a href="" class="del">刪除</a>
+  </div>
+
+</div>
+<div class="add-expense">
+  <a href="/expenses/new"><button class="add-btn">新增支出</button></a>
+</div>

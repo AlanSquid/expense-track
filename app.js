@@ -4,6 +4,8 @@ const PORT = 3000
 
 const app = express()
 
+app.use(express.static('public'))
+
 app.engine('hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 

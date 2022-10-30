@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', 'Noto Sans TC', sans-serif;
+}
+
+nav {
+  background: #e0e0e0;
+  height: 40px;
+}
+
+
+.nav-bar {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  height: 100%;
+}
+
+.logout-btn {
+  width: 50px;
+  height: 25px;
+  font-weight: bold;
+  color: darkorange;
+  background: #f6f6f6;
+  border-radius: 6px;
+  border: 1.5px solid black;
+}
+
+.category {
+  margin: 30px;
+  text-align: center;
+}
+
+.category-dropdown {
+  width: 35%;
+  min-width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+.total-group {
+  display: flex;
+  width: 35%;
+  height: 20vh;
+  margin: 0 auto;
+}
+
+.totalAmount {
+  font-size: 5em;
+  color: #ff6f00;
+  width: 300px;
+  text-align: end;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  /* outline: 1px solid olivedrab; */
+}
+
+.expense-list {
+
+  width: 34%;
+  margin: 0 50px 0 33%;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.item-group {
+  display: flex;
+}
+
+.item-icon {
+  font-size: 2.2em;
+  margin: auto 10px;
+  color: turquoise
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto 10px;
+}
+
+.item-price {
+  font-size: 1.5em;
+  margin: auto 0;
+}
+
+ul li:nth-child(odd) {
+  background: #f0f0f0;
+}
+
+ul li:nth-child(even) {
+  background: #fefefe;
+}
+
+.edit-del {
+  width: 20%;
+  line-height: 10vh;
+}
+
+.edit {
+  margin-right: 20px;
+}
+
+.add-expense {
+  width: 100px;
+  margin: 20px auto;
+}
+
+.add-btn {
+  background: #ff6f00;
+  color: white;
+  width: 100px;
+  height: 5vh;
+  border-radius: 6px;
+}
+
+.add-btn:hover {
+  color: black;
+}
