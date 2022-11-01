@@ -34,103 +34,146 @@ nav {
   border: 1.5px solid black;
 }
 
-.category {
-  margin: 30px;
-  text-align: center;
+.container {
+  width: 80%;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .category-dropdown {
-  width: 35%;
-  min-width: 300px;
-  height: 30px;
+  width: 25vw;
+  height: 5vh;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .total-group {
+  width: 25vw;
+  height: 15vh;
   display: flex;
-  width: 35%;
-  height: 20vh;
-  margin: 0 auto;
+  justify-content: space-between;
 }
 
-.totalAmount {
-  font-size: 5em;
+.total-group .totalAmount {
+  font-size: 4em;
   color: #ff6f00;
-  width: 300px;
-  text-align: end;
-}
-
-.container {
-  display: flex;
-  margin: 0 auto;
-  /* outline: 1px solid olivedrab; */
-}
-
-.expense-list {
-
-  width: 34%;
-  margin: 0 50px 0 33%;
 }
 
 ul li {
+  list-style: none;
+  background: #fdfdfd;
+}
+
+ul li:nth-child(odd) .item-group {
+  background: #ededed;
+}
+
+.expense-list {
   display: flex;
-  justify-content: space-between;
-  height: 10vh;
-  list-style-type: none;
-  padding-right: 20px;
 }
 
 .item-group {
   display: flex;
+  width: 25vw;
+  margin: 0 50px 0 130px;
+  overflow: hidden;
 }
 
-.item-icon {
-  font-size: 2.2em;
-  margin: auto 10px;
-  color: turquoise
+.item-group .item-icon {
+  color: turquoise;
+  font-size: 2em;
+  margin: 10px;
 }
 
-.item-text {
-  display: flex;
-  flex-direction: column;
-  margin: auto 10px;
+.item-group .item-text {
+  align-self: center;
+  margin-left: 5px;
 }
 
-.item-price {
-  font-size: 1.5em;
-  margin: auto 0;
-}
-
-ul li:nth-child(odd) {
-  background: #f0f0f0;
-}
-
-ul li:nth-child(even) {
-  background: #fefefe;
+.item-group .item-price {
+  align-self: center;
+  margin-left: 150px;
+  font-size: 1.2em;
 }
 
 .edit-del {
-  width: 20%;
-  line-height: 10vh;
-}
-
-.edit {
-  margin-right: 20px;
-}
-
-.add-expense {
-  width: 100px;
-  margin: 20px auto;
+  background: white;
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .add-btn {
   background: #ff6f00;
   color: white;
-  width: 100px;
+  width: 120px;
   height: 5vh;
+  margin-top: 30px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .add-btn:hover {
   color: black;
+}
+
+.new-title-group,
+.edit-title-group {
+  display: flex;
+}
+
+.new-required,
+.edit-required {
+  font-size: 0.8em;
+  line-height: 5vh;
+}
+
+.new-title,
+.edit-title {
+  margin: 0 50px 20px 50px;
+  font-weight: 400;
+}
+
+.new-form,
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-form-group,
+.edit-form-group {
+  margin-bottom: 30px;
+}
+
+.new-form-group label,
+.edit-form-group label {
+  margin: 0 20px 0 -40px;
+}
+
+.new-form-group input,
+.edit-form-group input {
+  width: 160px;
+  height: 5vh;
+}
+
+.new-form-group select,
+.edit-form-group select {
+  width: 165px;
+  height: 6vh;
+}
+
+.new-add-btn,
+.edit-add-btn {
+  background: white;
+  width: 130px;
+  height: 5vh;
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
 }

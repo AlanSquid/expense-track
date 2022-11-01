@@ -13,6 +13,15 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/expenses/new', (req, res) => {
+  res.render('new')
+})
+
+
+app.get('/expenses/edit/id', (req, res) => {
+  res.render('edit')
+})
+
 app.listen(PORT, () => {
   console.log(`App is running on http://localhost:${PORT}`)
 })
