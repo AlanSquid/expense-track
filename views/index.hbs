@@ -20,7 +20,29 @@
 
   <div class="expense">
     <ul>
+      {{#each expenses}}
       <li class="expense-list">
+        <div class="item-group">
+          <div class="item-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div class="item-text">
+            <h3 class="item-name">{{this.name}}</h3>
+            <h6 class="item-date">{{this.date}}</h6>
+          </div>
+          <div class="item-price">
+            <p>{{this.price}}</p>
+          </div>
+        </div>
+        <div class="edit-del">
+          <a href="/expenses/{{this._id}}/edit">修改</a>
+          <form action="/expenses/{{this._id}}?_method=DELETE" method="POST">
+            <button type="submit" class="del-btn">刪除</button>
+          </form>
+        </div>
+      </li>
+      {{/each}}
+      {{!-- <li class="expense-list">
         <div class="item-group">
           <div class="item-icon">
             <i class="fa-solid fa-utensils"></i>
@@ -37,43 +59,7 @@
           <a href="/expenses/edit/id">修改</a>
           <a href="">刪除</a>
         </div>
-      </li>
-      <li class="expense-list">
-        <div class="item-group">
-          <div class="item-icon">
-            <i class="fa-solid fa-utensils"></i>
-          </div>
-          <div class="item-text">
-            <h3 class="item-name">午餐</h3>
-            <h6 class="item-date">2022/10/29</h6>
-          </div>
-          <div class="item-price">
-            <p>60</p>
-          </div>
-        </div>
-        <div class="edit-del">
-          <a href="/expenses/edit/id">修改</a>
-          <a href="">刪除</a>
-        </div>
-      </li>
-      <li class="expense-list">
-        <div class="item-group">
-          <div class="item-icon">
-            <i class="fa-solid fa-utensils"></i>
-          </div>
-          <div class="item-text">
-            <h3 class="item-name">午餐</h3>
-            <h6 class="item-date">2022/10/29</h6>
-          </div>
-          <div class="item-price">
-            <p>60</p>
-          </div>
-        </div>
-        <div class="edit-del">
-          <a href="/expenses/edit/id">修改</a>
-          <a href="">刪除</a>
-        </div>
-      </li>
+      </li> --}}
     </ul>
   </div>
 

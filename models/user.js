@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  createAt: { type: Date, default: Date.now }
+  createAt: { type: Date, immutalbe: true, default: Date.now }
 })
 
 module.exports = mongoose.model('User', userSchema)

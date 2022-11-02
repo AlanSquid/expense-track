@@ -4,20 +4,20 @@
     <h3 class="new-title">請輸入你的支出</h3>
   </div>
 
-  <form action="/" method="POST" class="new-form">
+  <form action="/expenses" method="POST" class="new-form">
     <div class="new-form-group">
       <label for="name">名稱*：</label>
-      <input type="text" id="name">
+      <input type="text" id="name" name="name">
     </div>
 
     <div class="new-form-group">
       <label for="date">日期*：</label>
-      <input type="date" id="date">
+      <input type="date" id="date" name="date">
     </div>
 
     <div class="new-form-group">
       <label for="category">類別*：</label>
-      <select name="category" id="category">
+      <select name="category" id="category" name="category">
         <option value="defaul">Select</option>
         <option value="home">家居物業</option>
         <option value="traffic">交通出行</option>
@@ -28,9 +28,9 @@
     </div>
     <div class="new-form-group">
       <label for="price">金額*：</label>
-      <input type="number" id="price">
+      <input type="number" id="price" name="price">
     </div>
-    <a href=""><button class="new-add-btn">新增支出</button></a>
+    <button type="submit" class="new-add-btn">新增支出</button>
   </form>
 
 

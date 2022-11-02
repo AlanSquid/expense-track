@@ -9,6 +9,11 @@ body {
   font-family: 'Lato', 'Noto Sans TC', sans-serif;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 nav {
   background: #e0e0e0;
   height: 40px;
@@ -80,24 +85,28 @@ ul li:nth-child(odd) .item-group {
   display: flex;
   width: 25vw;
   margin: 0 50px 0 130px;
-  overflow: hidden;
 }
 
 .item-group .item-icon {
   color: turquoise;
   font-size: 2em;
   margin: 10px;
+  flex: 10% 0 1;
 }
 
 .item-group .item-text {
   align-self: center;
-  margin-left: 5px;
+  margin: 0 90px 0 5px;
+  flex: 40% 0 1;
 }
+
 
 .item-group .item-price {
   align-self: center;
-  margin-left: 150px;
+  text-align: end;
   font-size: 1.2em;
+  margin-right: 10px;
+  flex: 50% 0 1;
 }
 
 .edit-del {
@@ -106,6 +115,14 @@ ul li:nth-child(odd) .item-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.edit-del .del-btn {
+  border: none;
+  background: white;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .add-btn {
