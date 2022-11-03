@@ -17,18 +17,16 @@
 
     <div class="new-form-group">
       <label for="category">類別*：</label>
-      <select name="category" id="category" name="category">
+      <select name="category" id="category">
         <option value="defaul">Select</option>
-        <option value="home">家居物業</option>
-        <option value="traffic">交通出行</option>
-        <option value="amusement">休閒娛樂</option>
-        <option value="diet">餐飲食品</option>
-        <option value="other">其他</option>
+        {{#each categories}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="new-form-group">
-      <label for="price">金額*：</label>
-      <input type="number" id="price" name="price">
+      <label for="amount">金額*：</label>
+      <input type="number" id="amount" name="amount">
     </div>
     <button type="submit" class="new-add-btn">新增支出</button>
   </form>

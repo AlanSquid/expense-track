@@ -4,34 +4,30 @@
     <h3 class="edit-title">請修改你的支出</h3>
   </div>
 
-  <form action="/expenses/{{expense._id}}?_method=PUT" method="POST" class="edit-form">
+  <form action="/expenses/{{record._id}}?_method=PUT" method="POST" class="edit-form">
     <div class="edit-form-group">
       <label for="name">名稱*：</label>
-      <input type="text" id="name" name="name" value="{{expense.name}}">
+      <input type="text" id="name" name="name" value="{{record.name}}">
     </div>
 
     <div class="edit-form-group">
       <label for="date">日期*：</label>
-      <input type="date" id="date" name="date" value="{{expense.date}}">
+      <input type="date" id="date" name="date" value="{{record.date}}">
     </div>
 
     <div class="edit-form-group">
       <label for="category">類別*：</label>
       <select name="category" id="category">
-        <option value="defaul">Select</option>
-        <option value="home" {{#if option1}}selected{{/if}}>家居物業</option>
-        <option value="traffic" {{#if option2}}selected{{/if}}>交通出行</option>
-        <option value="amusement" {{#if option3}}selected{{/if}}>休閒娛樂</option>
-        <option value="diet" {{#if option4}}selected{{/if}}>餐飲食品</option>
-        <option value="other" {{#if option5}}selected{{/if}}>其他</option>
+        <option value="">Select</option>
+        {{#each categories}}
+        <option value="{{this._id}}" {{this.selected}}>{{this.name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="edit-form-group">
-      <label for="price">金額*：</label>
-      <input type="number" id="price" name="price" value="{{expense.price}}">
+      <label for="amount">金額*：</label>
+      <input type="number" id="amount" name="amount" value="{{record.amount}}">
     </div>
     <a href=""><button class="edit-add-btn">送出</button></a>
   </form>
-
-
 </div>

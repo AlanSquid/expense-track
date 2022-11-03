@@ -1,37 +1,35 @@
 <div class="container">
   <div class="category">
     <form action="/">
-      <select class="category-dropdown" name="sort" id="sort">
+      <select class="category-dropdown" name="category" id="category">
         <option value="default">類別</option>
-        <option value="home">家居物業</option>
-        <option value="traffic">交通出行</option>
-        <option value="amusement">休閒娛樂</option>
-        <option value="diet">餐飲食品</option>
-        <option value="other">其他</option>
+        {{#each categories}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
       </select>
     </form>
   </div>
 
+  {{!-- totalAomount --}}
   <div class="total-group">
     <div class="total-text">總金額：</div>
     <div class="totalAmount">50000</div>
   </div>
 
-
   <div class="expense">
     <ul>
-      {{#each expenses}}
+      {{#each records}}
       <li class="expense-list">
         <div class="item-group">
           <div class="item-icon">
-            <i class="fa-solid fa-utensils"></i>
+            <i class="{{this.category.icon}}"></i>
           </div>
           <div class="item-text">
             <h3 class="item-name">{{this.name}}</h3>
             <h6 class="item-date">{{this.date}}</h6>
           </div>
-          <div class="item-price">
-            <p>{{this.price}}</p>
+          <div class="item-amount">
+            <p>{{this.amount}}</p>
           </div>
         </div>
         <div class="edit-del">
@@ -51,7 +49,7 @@
             <h3 class="item-name">午餐</h3>
             <h6 class="item-date">2022/10/29</h6>
           </div>
-          <div class="item-price">
+          <div class="item-amount">
             <p>60</p>
           </div>
         </div>

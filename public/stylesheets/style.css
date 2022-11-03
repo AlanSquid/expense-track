@@ -91,22 +91,19 @@ ul li:nth-child(odd) .item-group {
   color: turquoise;
   font-size: 2em;
   margin: 10px;
-  flex: 10% 0 1;
 }
 
 .item-group .item-text {
   align-self: center;
-  margin: 0 90px 0 5px;
-  flex: 40% 0 1;
+  flex: 70% 0 1;
 }
 
 
-.item-group .item-price {
+.item-group .item-amount {
   align-self: center;
   text-align: end;
   font-size: 1.2em;
-  margin-right: 10px;
-  flex: 50% 0 1;
+  flex: 30% 0 1;
 }
 
 .edit-del {

@@ -1,14 +1,20 @@
 const express = require('express')
+const Record = require('../../models/record')
+const Category = require('../../models/category')
 const router = express.Router()
-const Expense = require('../../models/expense')
+const moment = require('moment')
+const category = require('../../models/category')
 
 router.get('/new', (req, res) => {
-  res.render('new')
+  Category.find({})
+    .sort({ _id: 'asc' })
+    .lean()
+    .then(categories => res.render('new', { categories }))
 })
 
 // 新增資料
 router.post('/', (req, res) => {
-  Expense.create(req.body)
+  Record.create(req.body)
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
 })
@@ -16,24 +22,31 @@ router.post('/', (req, res) => {
 
 router.get('/:id/edit', (req, res) => {
   const _id = req.params.id
-  Expense.findOne({ _id })
+  Category.find({})
+    .sort({ _id: 'asc' })
     .lean()
-    .then(expense => res.render('edit', {
-      expense,
-      option1: 'home' === expense.category,
-      option2: 'traffic' === expense.category,
-      option3: 'amusement' === expense.category,
-      option4: 'diet' === expense.category,
-      option5: 'other' === expense.category
-    }))
-    .catch(err => console.log(err))
+    .then(categories => {
+      Record.findOne({ _id })
+        .lean()
+        .populate('category')
+        .then(record => {
+          record.date = moment(record.date).format('YYYY-MM-DD')
+          categories.map(category => {
+            if (category.name === record.category.name) {
+              console.log(category._id)
+              category.selected = 'selected'
+            }
+          })
+          res.render('edit', { record, categories })
+        })
+    })
+
 })
 
 // 修改
 router.put('/:id', (req, res) => {
   const _id = req.params.id
-  console.log(req.body)
-  Expense.findByIdAndUpdate({ _id }, req.body)
+  Record.findByIdAndUpdate({ _id }, req.body)
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
 })
@@ -41,7 +54,7 @@ router.put('/:id', (req, res) => {
 // 刪除
 router.delete('/:id', (req, res) => {
   const _id = req.params.id
-  Expense.findByIdAndDelete({ _id })
+  Record.findByIdAndDelete({ _id })
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
 })
