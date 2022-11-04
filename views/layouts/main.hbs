@@ -8,18 +8,24 @@
   <script src="https://kit.fontawesome.com/0a1c840ba7.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/style.css">
 
-  <title>家庭記帳本</title>
+  <title>記帳本</title>
 </head>
 
 <body>
   <nav>
     <div class="nav-bar">
       <a href="/">
-        <h3 class="nav-title">家庭記帳本</h3>
+        <h3 class="nav-title">{{#if isAuthenticated}}{{ user.name}}的{{/if}}記帳本</h3>
       </a>
+      {{#if isAuthenticated}}
+      <a href="/users/logout">
+        <button class="login-logout">登出</button>
+      </a>
+      {{else}}
       <a href="/users/login">
         <button class="login-logout">登入</button>
       </a>
+      {{/if}}
     </div>
   </nav>
   {{{body}}}
