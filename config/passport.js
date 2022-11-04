@@ -9,8 +9,9 @@ module.exports = app => {
   // 設定本地登入策略
   passport.use(new LocalStrategy({
     usernameField: 'email',
+    passReqToCallback: true,
   },
-    (email, password, done) => {
+    (req, email, password, done) => {
       User.findOne({ email }).then(user => {
         if (!user) {
           return done(null, false, { message: '此信箱尚未註冊！' })

@@ -20,15 +20,53 @@ router.get('/register', (req, res) => {
   res.render('register')
 })
 
+// 註冊
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
+  const errors = []
+
+  // 必填欄位未填的
+  if (!name || !email || !password || !confirmPassword) {
+    errors.push({ message: '必填欄位不可空白！' })
+  }
+
+
+  // 密碼長度至少4碼
+  if (password.length !== 0 && password.length < 6) {
+    errors.push({ message: '密碼長度至少6碼！' })
+  }
+
+  // 密碼與確認密碼不符
+  if (password !== confirmPassword) {
+    errors.push({ message: '密碼與確認密碼不相符！' })
+  }
+
+  if (errors.length) {
+    return res.render('register', {
+      errors,
+      name,
+      email
+    })
+  }
+
   User.findOne({ email })
     .then(user => {
       if (user) {
-        console.log('此信箱已經註冊過')
+        errors.push({ message: '此信箱已註冊過！' })
+        return res.render('register', {
+          errors,
+          name,
+          email,
+          password,
+          confirmPassword
+        })
       }
       User.create(req.body)
-        .then(() => res.redirect('/'))
+        .then((user) => {
+          req.login(user, () => {
+            res.redirect('/')
+          })
+        })
     })
     .catch(err => console.log(err))
 })
@@ -36,7 +74,7 @@ router.post('/register', (req, res) => {
 router.get('/logout', (req, res, next) => {
   req.logout(err => {
     if (err) { return next(err) }
-    // req.flash('success_msg', '您已成功登出。')
+    req.flash('success_msg', '您已成功登出。')
     res.redirect('/users/login')
   })
 })

@@ -14,9 +14,17 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: black
+}
+
 nav {
   background: #e0e0e0;
-  height: 40px;
+  height: 50px;
+}
+
+.nav-title {
+  font-size: 1.5em;
 }
 
 
@@ -30,7 +38,7 @@ nav {
 }
 
 .login-logout {
-  width: 50px;
+  width: 70px;
   height: 25px;
   font-weight: bold;
   color: darkorange;
@@ -102,6 +110,14 @@ ul li:nth-child(odd) .item-group {
   flex: 67% 0 1;
 }
 
+.item-name {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.item-date {
+  font-size: 0.8em;
+}
 
 .item-group .item-amount {
   align-self: center;
@@ -135,7 +151,7 @@ ul li:nth-child(odd) .item-group {
   color: white;
   width: 120px;
   height: 5vh;
-  margin-top: 30px;
+  margin: 15px;
   border: 1px solid black;
   border-radius: 6px;
   cursor: pointer;
@@ -164,6 +180,7 @@ ul li:nth-child(odd) .item-group {
 .edit-title {
   margin: 0 50px 20px 50px;
   font-weight: 400;
+  font-size: 1.2em;
 }
 
 .new-form,
@@ -201,11 +218,6 @@ ul li:nth-child(odd) .item-group {
   border-radius: 20px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   width: 30vw;
-  height: 63vh;
-}
-
-.register-outer {
-  height: 75vh;
 }
 
 .login-form,
@@ -232,7 +244,7 @@ ul li:nth-child(odd) .item-group {
 .login-input-group input,
 .register-input-group input {
   width: 20vw;
-  height: 4vh;
+  height: 5vh;
 }
 
 .login-btn-group {
@@ -265,6 +277,7 @@ ul li:nth-child(odd) .item-group {
 }
 
 .lead {
-  margin-top: 25px;
+  font-size: 1em;
+  margin-top: 10px;
   padding-left: 60px;
 }
