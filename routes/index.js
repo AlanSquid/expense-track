@@ -5,8 +5,11 @@ const home = require('./modules/home')
 const expenses = require('./modules/expenses')
 const users = require('./modules/users')
 
-router.use('/', home)
-router.use('/expenses', expenses)
+const { authenticator } = require('../middleware/auth')
+
 router.use('/users', users)
+router.use('/expenses', authenticator, expenses)
+router.use('/', authenticator, home)
+
 
 module.exports = router
