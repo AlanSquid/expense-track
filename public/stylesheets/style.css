@@ -72,6 +72,7 @@ nav {
 ul li {
   list-style: none;
   background: #fdfdfd;
+  height: 10vh;
 }
 
 ul li:nth-child(odd) .item-group {
@@ -90,13 +91,15 @@ ul li:nth-child(odd) .item-group {
 
 .item-group .item-icon {
   color: turquoise;
+  align-self: center;
   font-size: 2em;
-  margin: 10px;
+  margin: 10px 6px 10px 10px;
+  flex: 13% 0 1;
 }
 
 .item-group .item-text {
   align-self: center;
-  flex: 70% 0 1;
+  flex: 67% 0 1;
 }
 
 
@@ -104,7 +107,7 @@ ul li:nth-child(odd) .item-group {
   align-self: center;
   text-align: end;
   font-size: 1.2em;
-  flex: 30% 0 1;
+  flex: 20% 0 1;
 }
 
 .edit-del {
@@ -198,7 +201,11 @@ ul li:nth-child(odd) .item-group {
   border-radius: 20px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   width: 30vw;
-  height: 65vh;
+  height: 63vh;
+}
+
+.register-outer {
+  height: 75vh;
 }
 
 .login-form,
