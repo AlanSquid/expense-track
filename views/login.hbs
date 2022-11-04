@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="login-outer">
+    <h1>Login</h1>
+    <form action="/users/login" method="POST">
+      <div class="login-form">
+        <div class="login-input-group">
+          <label for="email">電子信箱:</label>
+          <input type="text" placeholder="Email" id="email" name="email">
+        </div>
+        <div class="login-input-group">
+          <label for="password">密碼:</label>
+          <input type="password" placeholder="Password" name="password" id="password">
+        </div>
+        <div class="login-btn-group">
+          <div class="third-party">
+            <a href="/auth/facebook" class="btn">
+              <i class="facebook-btn fa-brands fa-square-facebook fa-lg"></i>
+            </a>
+            <a href="/auth/google" class="btn">
+              <i class="google-btn fa-brands fa-square-google-plus fa-lg"></i>
+            </a>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </div>
+      </div>
+    </form>
+    <p class="lead">
+      新用戶請先註冊 <a href="/users/register" style="color: blue;">Register</a>
+    </p>
+  </div>
+</div>

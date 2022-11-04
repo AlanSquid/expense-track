@@ -3,7 +3,7 @@ const router = express.Router()
 const Record = require('../../models/record')
 const Category = require('../../models/category')
 const moment = require('moment')
-const category = require('../../models/category')
+
 
 router.get('/', (req, res) => {
   let totalAmount = 0

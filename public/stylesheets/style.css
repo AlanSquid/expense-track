@@ -29,7 +29,7 @@ nav {
   height: 100%;
 }
 
-.logout-btn {
+.login-logout {
   width: 50px;
   height: 25px;
   font-weight: bold;
@@ -37,6 +37,7 @@ nav {
   background: #f6f6f6;
   border-radius: 6px;
   border: 1.5px solid black;
+  cursor: pointer;
 }
 
 .container {
@@ -122,17 +123,26 @@ ul li:nth-child(odd) .item-group {
   cursor: pointer;
 }
 
-.add-btn {
+.add-btn,
+.new-add-btn,
+.edit-add-btn,
+.login-btn-group .login-btn,
+.register-btn {
   background: #ff6f00;
   color: white;
   width: 120px;
   height: 5vh;
   margin-top: 30px;
+  border: 1px solid black;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.add-btn:hover {
+.add-btn:hover,
+.new-add-btn:hover,
+.edit-add-btn:hover,
+.login-btn-group .login-btn:hover,
+.register-btn:hover {
   color: black;
 }
 
@@ -182,12 +192,72 @@ ul li:nth-child(odd) .item-group {
   height: 6vh;
 }
 
-.new-add-btn,
-.edit-add-btn {
-  background: white;
-  width: 130px;
-  height: 5vh;
+.login-outer,
+.register-outer {
   border: 1px solid black;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  width: 30vw;
+  height: 65vh;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-outer h1,
+.register-outer h1 {
+  text-align: center;
+  margin: 15px
+}
+
+.login-input-group,
+.register-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.login-input-group input,
+.register-input-group input {
+  width: 20vw;
+  height: 4vh;
+}
+
+.login-btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-btn,
+.facebook-btn {
+  font-size: 2em;
+  margin-right: 5px;
+}
+
+.facebook-btn {
+  color: #385898;
+}
+
+.facebook-btn:hover {
+  color: #3578E5;
+}
+
+.google-btn {
+  color: #dd4b39;
+}
+
+.google-btn:hover {
+  color: #FF7866;
+}
+
+.lead {
+  margin-top: 25px;
+  padding-left: 60px;
 }

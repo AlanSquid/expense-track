@@ -2,7 +2,7 @@
   <div class="category">
     <form action="/">
       <select class="category-dropdown" name="category" id="category" onchange="this.form.submit()">
-        <option value="">類別</option>
+        <option value="">所有類別</option>
         {{#each categories}}
         <option value="{{this._id}}" {{this.selected}}>{{this.name}}</option>
         {{/each}}
