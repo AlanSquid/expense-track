@@ -14,6 +14,7 @@ router.get('/new', (req, res) => {
 
 // 新增資料
 router.post('/', (req, res) => {
+  req.body.userID = req.user._id
   Record.create(req.body)
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
@@ -21,12 +22,13 @@ router.post('/', (req, res) => {
 
 
 router.get('/:id/edit', (req, res) => {
+  const userID = req.user._id
   const _id = req.params.id
   Category.find({})
     .sort({ _id: 'asc' })
     .lean()
     .then(categories => {
-      Record.findOne({ _id })
+      Record.findOne({ _id, userID })
         .lean()
         .populate('category')
         .then(record => {
@@ -45,6 +47,7 @@ router.get('/:id/edit', (req, res) => {
 // 修改
 router.put('/:id', (req, res) => {
   const _id = req.params.id
+  req.body.userID = req.user._id
   Record.findByIdAndUpdate({ _id }, req.body)
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
@@ -52,8 +55,9 @@ router.put('/:id', (req, res) => {
 
 // 刪除
 router.delete('/:id', (req, res) => {
+  const userID = req.user._id
   const _id = req.params.id
-  Record.findByIdAndDelete({ _id })
+  Record.findByIdAndDelete({ _id }, userID)
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
 })

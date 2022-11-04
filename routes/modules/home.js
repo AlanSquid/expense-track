@@ -6,6 +6,7 @@ const moment = require('moment')
 
 
 router.get('/', (req, res) => {
+  const userID = req.user._id
   let totalAmount = 0
   const categorySelector = []
   Category.find({})
@@ -22,7 +23,7 @@ router.get('/', (req, res) => {
           categorySelector.push(category)
         }
       })
-      Record.find({ category: categorySelector })
+      Record.find({ userID, category: categorySelector })
         .lean()
         .populate('category')
         .sort({ date: 'desc' })
