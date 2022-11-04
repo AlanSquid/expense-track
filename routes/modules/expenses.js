@@ -31,9 +31,8 @@ router.get('/:id/edit', (req, res) => {
         .populate('category')
         .then(record => {
           record.date = moment(record.date).format('YYYY-MM-DD')
-          categories.map(category => {
-            if (category.name === record.category.name) {
-              console.log(category._id)
+          categories.forEach(category => {
+            if (category._id.toString() === record.category._id.toString()) {
               category.selected = 'selected'
             }
           })
