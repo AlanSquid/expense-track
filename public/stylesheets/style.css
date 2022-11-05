@@ -72,8 +72,12 @@ nav {
   justify-content: space-between;
 }
 
+.total-group .total-text {
+  font-size: 0.9em;
+}
+
 .total-group .totalAmount {
-  font-size: 4em;
+  font-size: 3.5em;
   color: #ff6f00;
 }
 
@@ -111,7 +115,7 @@ ul li:nth-child(odd) .item-group {
 }
 
 .item-name {
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-top: 10px;
 }
 
@@ -124,6 +128,7 @@ ul li:nth-child(odd) .item-group {
   text-align: end;
   font-size: 1.2em;
   flex: 20% 0 1;
+  padding-right: 5px;
 }
 
 .edit-del {
@@ -163,6 +168,12 @@ ul li:nth-child(odd) .item-group {
 .login-btn-group .login-btn:hover,
 .register-btn:hover {
   color: black;
+}
+
+.recover-btn {
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 50px;
 }
 
 .new-title-group,
