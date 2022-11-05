@@ -37,7 +37,7 @@
         <div class="edit-del">
           <a href="/expenses/{{this._id}}/edit">修改</a>
           <form action="/expenses/{{this._id}}?_method=DELETE" method="POST">
-            <button type="submit" class="del-btn">刪除</button>
+            <button type="submit" class="del-btn" onclick="return confirm('刪除後無法復原，請問確定要刪除項目嗎?')">刪除</button>
           </form>
         </div>
       </li>
