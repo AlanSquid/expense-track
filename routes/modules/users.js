@@ -31,7 +31,7 @@ router.post('/register', (req, res) => {
   }
 
 
-  // 密碼長度至少4碼
+  // 密碼長度至少6碼
   if (password.length !== 0 && password.length < 6) {
     errors.push({ message: '密碼長度至少6碼！' })
   }
