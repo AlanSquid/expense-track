@@ -9,19 +9,19 @@
     {
       "name": "汽車加油",
       "date": "2022-11-2",
-      "amount": "1000",
+      "amount": "1100",
       "category": "交通出行"
     },
     {
       "name": "房租",
       "date": "2022-11-5",
       "amount": "25000",
-      "category": "居家物業"
+      "category": "家居物業"
     },
     {
       "name": "電影",
       "date": "2022-11-6",
-      "amount": "300",
+      "amount": "330",
       "category": "休閒娛樂"
     },
     {
